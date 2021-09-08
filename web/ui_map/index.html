@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>UI frontpage</title> 
+    </head>
+    <body>
+
+        <object data="covidmap.svg" type="image/svg+xml"
+         id="covidmapsvg" width="100%" height="100%"></object>
+
+        <script>
+            var a = document.getElementById("covidmapsvg");
+
+            // add a load event listener to the object,
+            // it will load the svg doc asynchronously
+            a.addEventListener("load",function(){
+
+                // get the inner DOM of covidmap.svg
+                var svgDoc = a.contentDocument;
+                // get the inner element by id
+                var uiMap = svgDoc.getElementById("chart-09f74869-90e8-4fbe-ab04-8ff9df7930c9");
+                // add behaviour
+                uiMap.addEventListener("mousedown",function(){
+                        alert('hello world!')
+                }, false);
+            }, false);
+        </script>
+    </body>
+</html>
