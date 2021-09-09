@@ -1,12 +1,13 @@
-m = 'ui_map/countries.txt'
-a_dictionary = {}
+from query import querydata
 
-def coderead(m):
-    infile = open(m, 'r')
+def makedict(file):
+    a_dictionary = {}
+    infile = open(file, 'r', encoding='utf-8')
     text = infile.readlines()
-    for j in text:
-        key, value = j[0:2], 0
+    cases = querydata()
+    for line in text:
+        country = line[3:].strip()
+        key, value = line[0:2], cases[country]
         a_dictionary[key] = value
-    print(a_dictionary)
-
-coderead(m)
+        print(country)
+    return a_dictionary

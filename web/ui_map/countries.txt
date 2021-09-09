@@ -4,7 +4,6 @@ af	Afghanistan
 al	Albania
 am	Armenia
 ao	Angola
-aq	Antarctica
 ar	Argentina
 at	Austria
 au	Australia
@@ -17,19 +16,19 @@ bg	Bulgaria
 bh	Bahrain
 bi	Burundi
 bj	Benin
-bn	Brunei Darussalam
-bo	Bolivia, Plurinational State of
+bn	Brunei
+bo	Bolivia
 br	Brazil
 bt	Bhutan
 bw	Botswana
 by	Belarus
 bz	Belize
 ca	Canada
-cd	Congo, the Democratic Republic of the
+cd	Congo
 cf	Central African Republic
 cg	Congo
 ch	Switzerland
-ci	Cote d’Ivoire
+ci	Cote d'Ivoire
 cl	Chile
 cm	Cameroon
 cn	China
@@ -38,7 +37,7 @@ cr	Costa Rica
 cu	Cuba
 cv	Cape Verde
 cy	Cyprus
-cz	Czech Republic
+cz	Czechia
 de	Germany
 dj	Djibouti
 dk	Denmark
@@ -47,7 +46,6 @@ dz	Algeria
 ec	Ecuador
 ee	Estonia
 eg	Egypt
-eh	Western Sahara
 er	Eritrea
 es	Spain
 et	Ethiopia
@@ -56,7 +54,7 @@ fr	France
 ga	Gabon
 gb	United Kingdom
 ge	Georgia
-gf	French Guiana
+gf	Guinea
 gh	Ghana
 gl	Greenland
 gm	Gambia
@@ -64,7 +62,6 @@ gn	Guinea
 gq	Equatorial Guinea
 gr	Greece
 gt	Guatemala
-gu	Guam
 gw	Guinea-Bissau
 gy	Guyana
 hk	Hong Kong
@@ -77,7 +74,7 @@ ie	Ireland
 il	Israel
 in	India
 iq	Iraq
-ir	Iran, Islamic Republic of
+ir	Iran
 is	Iceland
 it	Italy
 jm	Jamaica
@@ -86,11 +83,10 @@ jp	Japan
 ke	Kenya
 kg	Kyrgyzstan
 kh	Cambodia
-kp	Korea, Democratic People’s Republic of
-kr	Korea, Republic of
+kr	South Korea
 kw	Kuwait
 kz	Kazakhstan
-la	Lao People’s Democratic Republic
+la	Laos
 lb	Lebanon
 li	Liechtenstein
 lk	Sri Lanka
@@ -99,13 +95,13 @@ ls	Lesotho
 lt	Lithuania
 lu	Luxembourg
 lv	Latvia
-ly	Libyan Arab Jamahiriya
+ly	Libya
 ma	Morocco
 mc	Monaco
-md	Moldova, Republic of
+md	Moldova
 me	Montenegro
 mg	Madagascar
-mk	Macedonia, the former Yugoslav Republic of
+mk	North Macedonia
 ml	Mali
 mm	Myanmar
 mn	Mongolia
@@ -133,21 +129,18 @@ pg	Papua New Guinea
 ph	Philippines
 pk	Pakistan
 pl	Poland
-pr	Puerto Rico
-ps	Palestine, State of
+ps	Palestine
 pt	Portugal
 py	Paraguay
-re	Reunion
 ro	Romania
 rs	Serbia
-ru	Russian Federation
+ru	Russia
 rw	Rwanda
 sa	Saudi Arabia
 sc	Seychelles
 sd	Sudan
 se	Sweden
 sg	Singapore
-sh	Saint Helena, Ascension and Tristan da Cunha
 si	Slovenia
 sk	Slovakia
 sl	Sierra Leone
@@ -157,28 +150,26 @@ so	Somalia
 sr	Suriname
 st	Sao Tome and Principe
 sv	El Salvador
-sy	Syrian Arab Republic
-sz	Swaziland
+sy	Syria
+sz	Eswatini
 td	Chad
 tg	Togo
 th	Thailand
 tj	Tajikistan
-tl	Timor-Leste
-tm	Turkmenistan
+tl	Timor
 tn	Tunisia
 tr	Turkey
-tw	Taiwan (Republic of China)
-tz	Tanzania, United Republic of
+tw	Taiwan
+tz	Tanzania
 ua	Ukraine
 ug	Uganda
 us	United States
 uy	Uruguay
 uz	Uzbekistan
-va	Holy See (Vatican City State)
-ve	Venezuela, Bolivarian Republic of
-vn	Viet Nam
+va	Vatican
+ve	Venezuela
+vn	Vietnam
 ye	Yemen
-yt	Mayotte
 za	South Africa
 zm	Zambia
 zw	Zimbabwe
