@@ -1,0 +1,1 @@
+SELECT * FROM ML.FORECAST(MODEL `loppuprojekti-325208.ML_test_1.ML_test`, STRUCT(30 AS horizon, 0.90 AS confidence_level))
