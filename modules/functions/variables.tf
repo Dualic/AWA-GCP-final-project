@@ -5,7 +5,7 @@ variable "runtime" {
 
 variable "entrypoint" {
   type = list(string)
-  default = ["upload_to_bq","currency_history", "delete_blob", "currency_today", "currenttohistory", "history", "dataprep_job_gcs_trigger", "dataprep_job_gcs_trigger"]
+  default = ["upload_to_bq","currency_history", "delete_blob", "currency_today", "currenttohistory", "history", "dataprep_job_gcs_trigger", "dataprep_job_gcs_trigger", "upload_blob_history"]
 }
 
 variable "source_repository_url" {
@@ -17,12 +17,13 @@ variable "source_repository_url" {
              "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/daily-to-history",
              "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/currency-history-to-csv",
              "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/CovidHistoryDatatoBigQueryTriggerFunction",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/LatestCovidDatatoBigQueryTriggerFunction"]
+             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/LatestCovidDatatoBigQueryTriggerFunction",
+             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/get-covid-history"]
 }
 
 variable "function_name" {
   type = list(string)
-  default = ["bq-data-transfer", "currencyhistory", "delete-func", "todayscurrencies", "daily-to-history", "currency-history-to-csv", "CovidHistoryDatatoBigQueryTriggerFunction", "LatestCovidDatatoBigQueryTriggerFunction"]
+  default = ["bq-data-transfer", "currencyhistory", "delete-func", "todayscurrencies", "daily-to-history", "currency-history-to-csv", "CovidHistoryDatatoBigQueryTriggerFunction", "LatestCovidDatatoBigQueryTriggerFunction", "get-covid-history"]
 }
 
 variable "project" {}

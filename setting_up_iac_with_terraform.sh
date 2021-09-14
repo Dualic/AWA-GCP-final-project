@@ -33,14 +33,3 @@ sqladmin.googleapis.com
 
 gcloud mb backend-bucket-final-project
 
-
-
-
-
-
-
-
-
-
-
-
