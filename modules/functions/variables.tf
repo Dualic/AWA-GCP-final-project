@@ -10,16 +10,16 @@ variable "entrypoint" {
 
 variable "source_repository_url" {
   type = list(string)
-  default = ["https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/bq-data-transfer",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/currencyhistory",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/delete-func",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/todayscurrencies",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/daily-to-history",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/currency-history-to-csv",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/CovidHistoryDatatoBigQueryTriggerFunction",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/LatestCovidDatatoBigQueryTriggerFunction",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/get-covid-history",
-             "https://source.developers.google.com/projects/leo-test-env-1/repos/github_leonbay_testi-ranch/moveable-aliases/master/paths/functions/get-covid-latest"]
+  default = ["https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/bq-data-transfer",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/currencyhistory",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/delete-func",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/todayscurrencies",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/daily-to-history",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/currency-history-to-csv",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/CovidHistoryDatatoBigQueryTriggerFunction",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/LatestCovidDatatoBigQueryTriggerFunction",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/get-covid-history",
+             "https://source.developers.google.com/projects/loppuprojekti-325208/repos/github_dualic_awa-gcp-final-project/moveable-aliases/master/paths/functions/get-covid-latest"]
 }
 
 variable "function_name" {
