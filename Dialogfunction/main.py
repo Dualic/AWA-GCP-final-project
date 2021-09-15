@@ -24,16 +24,21 @@ def dialogfunction(request):
         for row in query_job2:
             myresp2 = row[0]
         recommendation = "recommendation failed"
+        addendum = "Let's go there!"
         if myresp2 < 0.45:
             recommendation = "definitely not recommended"
+            addendum = "Maybe you should check the Nordic countries?"
         elif myresp2 < 0.6:
             recommendation = "probably not recommended"
+            addendum = "Bring an extra pack of face masks with you... just in case!"
         elif myresp2 < 0.75:
             recommendation = "mildly recommended"
+            addendum = "Have a nice trip!"
         else:
             recommendation = "highly recommended"
+            addendum = "I wish I could go too!"
             
-        finalresponse = f"The forecast for new COVID cases in {geocountry} on {datetime[:10]} is {myresp} per 100 000 people. By our safety index it is {recommendation} to go there."
+        finalresponse = f"The forecast for new COVID cases in {geocountry} on {datetime[:10]} is {myresp} per 100 000 people. By our safety index it is {recommendation} to go there.\n\n{addendum}"
         
     except:
         finalresponse = "Sorry, I couldn't find the information. Try with a country name and a close by date."
