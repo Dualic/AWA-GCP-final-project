@@ -1,50 +1,55 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>UI frontpage</title> 
-        <link rel="stylesheet" href="css/main.css">
+        <%- include('../partials/head'); %>
     </head>
     <body>
+        <header class="header">
+            <%- include('../partials/header'); %>
+        </header>
 
         <object data="covidmaplinks.svg" type="image/svg+xml"
          id="svg-object" width="100%" height="100%"></object>
+        
+        <script type="text/javascript">
+            var clientRows = <%- rows %>
+        </script>
 
-         <script type="text/javascript">
+        <script src="js/scripts.js" type="text/javascript"></script>
 
-            window.addEventListener("load", function() {
-                let codes = ['ad', 'ae', 'af', 'al', 'am', 'ao', 'ar', 'at', 'au', 'az', 'ba', 'bd', 'be', 'bf', 'bg', 'bh', 'bi', 'bj', 'bn', 'bo', 'br',
-                        'bt', 'bw', 'by', 'bz', 'ca', 'cd', 'cf', 'cg', 'ch', 'ci', 'cl', 'cm', 'cn', 'co', 'cr', 'cu', 'cv', 'cy', 'cz', 'de', 'dj',
-                        'dk', 'do', 'dz', 'ec', 'ee', 'eg', 'er', 'es', 'et', 'fi', 'fr', 'ga', 'gb', 'ge', 'gf', 'gh', 'gl', 'gm', 'gn', 'gq', 'gr',
-                        'gt', 'gw', 'gy', 'hk', 'hn', 'hr', 'ht', 'hu', 'id', 'ie', 'il', 'in', 'iq', 'ir', 'is', 'it', 'jm', 'jo', 'jp', 'ke', 'kg','kh',
-                        'kr', 'kw', 'kz', 'la', 'lb', 'li', 'lk', 'lr', 'ls', 'lt', 'lu', 'lv', 'ly', 'ma', 'mc', 'md', 'me', 'mg', 'mk', 'ml', 'mm',
-                        'mn', 'mo', 'mr', 'mt', 'mu', 'mv', 'mw', 'mx', 'my', 'mz', 'na', 'ne', 'ng', 'ni', 'nl', 'no', 'np', 'nz', 'om',
-                        'pa', 'pe', 'pg', 'ph', 'pk', 'pl', 'ps', 'pt', 'py', 'ro', 'rs', 'ru', 'rw', 'sa', 'sc', 'sd', 'se', 'sg', 'si', 'sk', 'sl', 'sm',
-                        'sn', 'so', 'sr', 'st', 'sv', 'sy', 'sz', 'td', 'tg', 'th', 'tj', 'tl', 'tn', 'tr', 'tw', 'tz', 'ua', 'ug', 'us', 'uy', 'uz', 'va', 've',
-                        'vn', 'ye', 'za', 'zm', 'zw',]
-                var svgObject = document.getElementById('svg-object').contentDocument;
-                for (let i = 0, len = codes.length; i < len; i++) {
-                    let argmnt = codes[i]
-                    var element = svgObject.getElementById(argmnt);
-                    element.addEventListener("click",function(){
-                        document.getElementById("mySidebar").style.width = "850px"
-                        var div = document.getElementById('mySidebar');
-                        div.innerHTML = `
-                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                        The country code is ${ argmnt }
-                        `
-                        query();
-                    }, false);
-                }
-            }, false);
-
-            function closeNav() {
-                document.getElementById("mySidebar").style.width = "0";
-                }
-                
-          </script>
           <div id="mySidebar" class="sidebar">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
             <p>This here will display information about the country you clicked!</p>
           </div>
+
+          <div id="myRightSidebar" class="rightSidebar">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav2()">&times;</a>
+            <div id="main">
+                <button class="openbtn" onclick="openNav()">&#9776; Open Chat</button>
+            </div>
+            <iframe width="350" height="430" allow="microphone;" src="https://console.dialogflow.com/api-client/demo/embedded/30233517-2001-4bc0-af6d-468a2d71c24a"></iframe>
+          </div>
+
+          <script>
+          function openNav() {
+            document.getElementById("myRightSidebar").style.width = "350px";
+            document.getElementById("main").style.marginRight = "350px";
+            document.getElementById("main").style.opacity = 0;
+          }
+          
+          /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+          function closeNav2() {
+            document.getElementById("myRightSidebar").style.width = "75px";
+            document.getElementById("main").style.marginRight = "100px";
+            document.getElementById("main").style.opacity = 1;
+          }
+        </script>
+
+          <div>
+            <iframe onload="this.width=screen.width;" height="450" src="https://datastudio.google.com/embed/reporting/f678645d-45d3-4f8f-a6c5-26db6cff1aca/page/p_1zo9qhjcnc" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+          <footer>
+            <%- include('../partials/footer'); %>
+          </footer>
     </body>
 </html>
