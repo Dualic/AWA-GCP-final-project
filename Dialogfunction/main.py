@@ -38,7 +38,7 @@ def dialogfunction(request):
             recommendation = "highly recommended"
             addendum = "I wish I could go too!"
             
-        finalresponse = f"The forecast for new COVID cases in {geocountry} on {datetime[:10]} is {myresp} per 100 000 people. By our safety index it is {recommendation} to go there.\n\n{addendum}"
+        finalresponse = f"The forecast for new COVID cases in {geocountry} on {datetime[:10]} is {myresp} per 100 000 people. By our safety index it is {recommendation} to go there. {addendum}"
         
     except:
         finalresponse = "Sorry, I couldn't find the information. Try with a country name and a close by date."
