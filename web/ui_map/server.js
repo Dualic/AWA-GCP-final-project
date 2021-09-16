@@ -22,9 +22,17 @@ app.get('/', function (req, res) {
     async function query() {
     // Queries the U.S. given names dataset for the state of Texas.
 
+    const today = new Date()
+    const yesterday = new Date(today)
+
+    yesterday.setDate(yesterday.getDate() - 1)
+
+    isotoday = today.toDateString()
+    isodate = yesterday.toISOString().split('T')[0]
+
     const query = `SELECT *
-        FROM \`testidata.covid_data_machine_learning\`
-        WHERE date = '2021-08-29T00:00:00'
+        FROM \`testidata.coviddata\`
+        WHERE date = '${isodate}'
         ORDER BY location`;
 
     // For all options, see https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query

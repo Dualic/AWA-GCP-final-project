@@ -2,7 +2,7 @@ import pygal
 from readcodes import makedict
 from makelinks import identifier
 from pygal.style import Style
-custom_style = Style(colors=('#9FE2BF', '#CCCCFF', '#DFFF00', '#DE3163', '#EAECEE'),
+custom_style = Style(colors=('#CCCCFF', '#9FE2BF', '#DFFF00', '#DE3163', '#EAECEE'),
                     tooltip_font_size='11',
                     no_data_font_size='11',
                     value_font_size='11',

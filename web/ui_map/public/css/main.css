@@ -15,13 +15,12 @@
 
   .rightSidebar {
     height: 100%; /* 100% Full-height */
-    width: 75px; /* 0 width - change this with JavaScript */
+    width: 0px; /* 0 width - change this with JavaScript */
     position: fixed; /* Stay in place */
     z-index: 1; /* Stay on top */
     top: 0;
     right: 0;
     background-color: #111; /* Black*/
-    overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 60px; /* Place content 60px from the top */
     transition: 1.5s; /* 0.5 second transition effect to slide in the sidebar */
     color: white;
@@ -86,6 +85,9 @@ svg {
   color: white;
   padding: 10px 15px;
   border: none;
+  position: relative;
+  left: -100px;
+  z-index: 1000;
 }
 
 .openbtn:hover {
@@ -191,6 +193,43 @@ html, body {
 
 #svg-object {
   border-top: 3px solid black;
+}
+
+/* CSS */
+button {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+button:hover,
+button:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+
+button:active {
+  opacity: .5;
 }
 
 .aeu-signature { font-family: "Quicksand"; }
