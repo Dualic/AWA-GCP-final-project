@@ -10,7 +10,7 @@ def upload_blob_latest(request):
     bucket_name2 = "covid-archive"
 
     # The path to your file to upload    
-    #req = Request("https://covid.ourworldindata.org/data/latest/owid-covid-latest.csv")
+    req = Request("https://covid.ourworldindata.org/data/latest/owid-covid-latest.csv")
     webpage = urlopen(req, timeout=10).read()
 
     # The ID of your GCS object
