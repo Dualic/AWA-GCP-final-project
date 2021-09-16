@@ -185,6 +185,10 @@ html, body {
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
+.countrydata {
+  padding-left: 20px;
+}
+
 #svg-object {
   border-top: 3px solid black;
 }
