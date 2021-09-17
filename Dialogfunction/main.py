@@ -14,27 +14,32 @@ def dialogfunction(request):
             geocountry = request_json['queryResult']['parameters']['geo-country']
             datetime = request_json['queryResult']['parameters']['date-time']
 
-        query = f"SELECT per100k FROM `loppuprojekti-325208.ML_test_1.ML_global_forecast_results_with_per100k` WHERE location = '{geocountry}' AND forecast_timestamp = TIMESTAMP_TRUNC('{datetime}', DAY) LIMIT 1"
+        query = f"SELECT new_cases_smoothed_per_million FROM `loppuprojekti-325208.ML_test_1.forecast_and_index_table_for_prodv2` WHERE location = '{geocountry}' AND date = TIMESTAMP_TRUNC('{datetime}', DAY) LIMIT 1"
         query_job = client.query(query) 
         for row in query_job:
             myresp = str(round(row[0],2))
 
-        query2 = f"SELECT travel_index FROM `loppuprojekti-325208.ML_test_1.forecast_and_index_table_for_prod` WHERE location = '{geocountry}' AND date = TIMESTAMP_TRUNC('{datetime}', DAY) LIMIT 1"
+        query2 = f"SELECT travel_index FROM `loppuprojekti-325208.ML_test_1.forecast_and_index_table_for_prodv2` WHERE location = '{geocountry}' AND date = TIMESTAMP_TRUNC('{datetime}', DAY) LIMIT 1"
         query_job2 = client.query(query2)
 
         for row in query_job2:
             myresp2 = row[0]
         recommendation = "recommendation failed"
+        addendum = "Let's go there!"
         if myresp2 < 0.45:
             recommendation = "definitely not recommended"
+            addendum = "Maybe you should check the Nordic countries?"
         elif myresp2 < 0.6:
             recommendation = "probably not recommended"
+            addendum = "Bring an extra pack of face masks with you... just in case!"
         elif myresp2 < 0.75:
             recommendation = "mildly recommended"
+            addendum = "Have a nice trip!"
         else:
             recommendation = "highly recommended"
+            addendum = "I wish I could go too!"
             
-        finalresponse = f"The forecast for new COVID cases in {geocountry} on {datetime[:10]} is {myresp} per 100 000 people. By our safety index it is {recommendation} to go there."
+        finalresponse = f"The forecast for new COVID cases in {geocountry} on {datetime[:10]} is {myresp} per million people. By our safety index it is {recommendation} to go there. {addendum}"
         
     except:
         finalresponse = "Sorry, I couldn't find the information. Try with a country name and a close by date."
