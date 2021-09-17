@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 google-cloud
+=======
+google-cloud
+>>>>>>> ca5594f6e8b3892abf78aec464878372f27e9b89
 google-cloud-bigquery

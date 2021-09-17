@@ -8,23 +8,28 @@ from google.cloud import secretmanager
 
 def dataprep_job_gcs_trigger(event, context):
 
-    newfilename = event['name']  
-    newfilepath = event['bucket']
 
+    #secret manager for access token:
+
+    # Create the Secret Manager client.
     client = secretmanager.SecretManagerServiceClient()
-    ip2 = client.access_secret_version(request={"name": "projects/844731295003/secrets/datapreptoken/versions/latest"})
-    ip = ip2.payload.data.decode("UTF-8")
 
-    #prints for dev:
-    #print("newfilepath on")
-    #print(newfilepath)
-    #print("event name")
-    #print(event['name'])
-    #print("event kokonaisuudessaan")
-    #print(event)
+    # Build the resource name of the secret version.
+    name = f"projects/loppuprojekti-325208/secrets/datapreptoken/versions/1"
+
+    # Access the secret version.
+    response = client.access_secret_version(request={"name": name})
+
+    payload = response.payload.data.decode("UTF-8")
 
 
-    datataprep_auth_token = ip
+    #dataprep section:
+
+    newfilename = event['name']  
+    newfilepath = event['bucket'] 
+
+    datataprep_auth_token = payload
+   
     dataprep_jobid = 3391912 
     listen_for_file = "owid-covid-data.csv"
     

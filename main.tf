@@ -2,7 +2,7 @@ terraform {
   required_providers {
     google = {
       source = "hashicorp/google"
-      version = "~> 3.5.0"
+      version = "3.84.0"
     }
   }
 }
@@ -25,24 +25,23 @@ module "storage" {
   region = var.region
 }
 
-# module "dialogflow" {
-#   source     = ".//modules/dialogflow_agent"
-#   project = var.project
-#   region = var.region
-# }
+module "dialogflow" {
+  source     = ".//modules/dialogflow_agent"
+  project = var.project
+  region = var.region
+}
 
 module "database" {
   source = ".//modules/database"
   project = var.project
   region = var.region
-  depends_on = [module.functions,]
 }
 
 module "functions" {
   source = ".//modules/functions"
   project = var.project
   region = var.region
-  depends_on = [module.storage,]
+  depends_on = [module.storage, module.database,]
 }
 
 module "workflow" {
@@ -50,6 +49,10 @@ module "workflow" {
   region = var.region
   depends_on = [module.functions,]
 }
+
+/* module "pubsub" {
+  source = ".//modules/pubsub"
+} */
 
 # module "cloud_scheduler" {
 #     source = ".//modules/cloud_build"

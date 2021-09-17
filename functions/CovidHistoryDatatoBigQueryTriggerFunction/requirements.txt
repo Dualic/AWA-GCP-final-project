@@ -1,2 +1,2 @@
-google-cloud-secret-manager
 requests
+google-cloud-secret-manager

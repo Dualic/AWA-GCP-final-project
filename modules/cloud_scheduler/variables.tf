@@ -1,4 +1,4 @@
-/*variable "scheduler_name" {}
+/* variable "scheduler_name" {}
 
 variable "scheduler_description" {}
 
@@ -12,4 +12,4 @@ variable "time_zone" {
   
 variable "http_method" {
     default     = "GET"
-}*/
+} */

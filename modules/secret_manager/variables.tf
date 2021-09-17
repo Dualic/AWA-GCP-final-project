@@ -1,3 +1,3 @@
-variable "project" {}
+# variable "project" {}
 
-variable "password" {}
+# variable "password" {}

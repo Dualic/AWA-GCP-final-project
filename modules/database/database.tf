@@ -15,6 +15,13 @@ resource "google_bigquery_dataset" "dataset" {
 
 }
 
+resource "google_bigquery_dataset" "error_dataset" {
+  dataset_id                  = "errorhistory"
+  description                 = "Logs sink"
+  location                    = "US"
+  project = var.project
+}
+
 resource "google_bigquery_table" "covid-table" {
   dataset_id = google_bigquery_dataset.dataset.dataset_id
   table_id   = "Covid-data"
