@@ -14,7 +14,7 @@ main:
         try:
           call: http.get
           args:
-            url: https://us-central1-leo-test-env-1.cloudfunctions.net/todays-currencies
+            url: https://us-central1-loppuprojekti-325208.cloudfunctions.net/todays-currencies
           result: resp1     
         retry: $${http.default_retry}
 #condition: pyyttonin palauttamista vaihtoehdoista
@@ -27,7 +27,7 @@ main:
             - publishToPubsub1:
                 call: googleapis.pubsub.v1.projects.topics.publish
                 args:
-                  topic: "projects/leo-test-env-1/topics/workflow-errors"
+                  topic: "projects/loppuprojekti-325208/topics/workflow-errors"
                   body:
                     messages:
                     - data: "Z2V0VG9kYXlzQ3VycmVuY2llcyBmdW5jdGlvbiBmYWlsZWQ="
@@ -37,7 +37,7 @@ main:
         try:
           call: http.get
           args:
-            url: https://us-central1-leo-test-env-1.cloudfunctions.net/daily-to-history
+            url: https://us-central1-loppuprojekti-325208.cloudfunctions.net/daily-to-history
           result: resp2
         retry: $${http.default_retry}
         #condition: pyyttonin palauttamista vaihtoehdoista
@@ -50,7 +50,7 @@ main:
             - publishToPubsub2:
                 call: googleapis.pubsub.v1.projects.topics.publish
                 args:
-                  topic: "projects/leo-test-env-1/topics/workflow-errors"
+                  topic: "projects/loppuprojekti-325208/topics/workflow-errors"
                   body:
                     messages:
                     - data: "ZGF0YUFkZGVkVG9IaXN0b3J5IGZ1bmN0aW9uIGZhaWxlZA=="
@@ -60,7 +60,7 @@ main:
         try:
           call: http.get
           args:
-            url: https://us-central1-leo-test-env-1.cloudfunctions.net/bq-transfer
+            url: https://us-central1-loppuprojekti-325208.cloudfunctions.net/bq-transfer
           result: resp3
         retry: $${http.default_retry}
     - switch_step3:
@@ -72,7 +72,7 @@ main:
             - publishToPubsub3:
                 call: googleapis.pubsub.v1.projects.topics.publish
                 args:
-                  topic: "projects/leo-test-env-1/topics/workflow-errors"
+                  topic: "projects/loppuprojekti-325208/topics/workflow-errors"
                   body:
                     messages:
                     - data: "dHJhbnNmZXJUb0JRIGZ1bmN0aW9uIGZhaWxlZA=="
@@ -81,7 +81,7 @@ main:
         try:
           call: http.get
           args:
-            url: https://us-central1-leo-test-env-1.cloudfunctions.net/delete-func
+            url: https://us-central1-loppuprojekti-325208.cloudfunctions.net/delete-func
           result: resp4
         retry: $${http.default_retry}
     - switch_step4:
@@ -93,7 +93,7 @@ main:
             - publishToPubsub4:
                 call: googleapis.pubsub.v1.projects.topics.publish
                 args:
-                  topic: "projects/leo-test-env-1/topics/workflow-errors"
+                  topic: "projects/loppuprojekti-325208/topics/workflow-errors"
                   body:
                     messages:
                     - data: "ZGVsZXRlRGFpbHlEYXRhIGZ1bmN0aW9uIGZhaWxlZA=="
