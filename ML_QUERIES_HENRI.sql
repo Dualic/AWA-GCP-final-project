@@ -48,11 +48,11 @@ WHERE
 date >= '2021-01-01'
 AND new_cases_smoothed_per_million >= 0
 
-CREATE or REPLACE MODEL ML_test_1.people_fully_vaccinated_prod
+CREATE or REPLACE MODEL ML_test_1.people_fully_vaccinated_per_hundred_prod
 OPTIONS(
     model_type='ARIMA_PLUS', 
     time_series_timestamp_col='date',
-    time_series_data_col='people_fully_vaccinated',
+    time_series_data_col='people_fully_vaccinated_per_hundred',
     time_series_id_col='location',
     horizon = 30,
     auto_arima = TRUE,
@@ -63,14 +63,14 @@ OPTIONS(
       SELECT 
     
       date,
-      people_fully_vaccinated,
+      people_fully_vaccinated_per_hundred,
       location
  
 FROM
     `loppuprojekti-325208.testidata.coviddata`
 WHERE
 date >= '2021-01-01'
-AND people_fully_vaccinated IS NOT NULL
+AND people_fully_vaccinated_per_hundred IS NOT NULL
 
 CREATE or REPLACE MODEL ML_test_1.stringency_index_prod
 OPTIONS(
@@ -128,7 +128,7 @@ ML.FORECAST(MODEL `loppuprojekti-325208.ML_test_1.stringency_index_prod`, STRUCT
 
 #MAKE TABLE FROM FORECASTS
 
-SELECT cases.location, cases.date, new_cases_smoothed_per_million, new_deaths_smoothed_per_million, people_fully_vaccinated_per_hundred, stringency_index, travel_index  
+SELECT cases.location, cases.date, new_cases_smoothed_per_million, new_deaths_smoothed_per_million, people_fully_vaccinated_per_hundred, stringency_index 
 FROM `loppuprojekti-325208.ML_test_1.forecast_new_cases_smoothed_per_million` AS cases
 JOIN `loppuprojekti-325208.ML_test_1.forecast_new_deaths_smoothed_per_million` AS deaths ON cases.location = deaths.location AND cases.date = deaths.date
 JOIN `loppuprojekti-325208.ML_test_1.forecast_people_fully_vaccinated_per_hundred` AS vaccinations ON cases.location = vaccinations.location AND cases.date = vaccinations.date
@@ -140,6 +140,8 @@ new_cases_smoothed_per_million,
 new_deaths_smoothed_per_million,
 people_fully_vaccinated_per_hundred,
 stringency_index
+ORDER BY
+location
 
 #MAKE INDEX
 
@@ -193,7 +195,7 @@ FROM `loppuprojekti-325208.ML_test_1.forecast_new_cases_smoothed_per_million` AS
 JOIN `loppuprojekti-325208.ML_test_1.forecast_new_deaths_smoothed_per_million` AS deaths ON cases.location = deaths.location AND cases.date = deaths.date
 JOIN `loppuprojekti-325208.ML_test_1.forecast_people_fully_vaccinated_per_hundred` AS vaccinations ON cases.location = vaccinations.location AND cases.date = vaccinations.date
 JOIN `loppuprojekti-325208.ML_test_1.forecast_stringency_index` AS stringency ON cases.location = stringency.location AND cases.date = stringency.date
-JOIN `loppuprojekti-325208.ML_test_1.forecast_travel_index_fixed_weights` AS index  ON cases.location = index.location AND cases.date = index.date
+JOIN `loppuprojekti-325208.ML_test_1.forecast_travel_index` AS index  ON cases.location = index.location AND cases.date = index.date
 GROUP BY 
 cases.location,
 cases.date,
